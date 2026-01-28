@@ -1,0 +1,35 @@
+site_name: Quantum Machine Learning Notes
+site_description: IT401 Quantum Machine Learning – Course Notes
+site_author: Kashyap Sureshchandra Patel & Falak Naresh Parmar
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+
+nav:
+  - Home: index.md
+  - Course Content: course_content.md
+  - Math Prerequisites: maths_prerequisites.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
