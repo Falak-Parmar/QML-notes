@@ -13,9 +13,22 @@ theme:
     - search.highlight
     - content.code.copy
   palette:
+    - scheme: default
+      toggle: 
+        icon: material/weather-sunny
+        name: Early Bird
+
+      primary: light blue
+      accent: white
+
     - scheme: slate
-      primary: deep purple
-      accent: cyan
+      toggle: 
+        icon: material/weather-night
+        name: Night Owl
+
+      primary: black
+      accent: white
+      
 
 nav:
   - Home: index.md
