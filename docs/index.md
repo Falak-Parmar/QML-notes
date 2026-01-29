@@ -1,34 +1,54 @@
 ---
 hide:
-  - navigation
   - toc
 ---
 
 <div class="hero">
 
-<div style="height: 4rem"></div>
+  <div class="hero-content">
+
+    <h1>Quantum Machine Learning</h1>
+
+    <p class="hero-subtitle">
+      A gentle, structured walk through quantum ideas,<br>
+      machine learning models, and the mathematics beneath them.
+    </p>
+
+    <p class="hero-meta">
+      IT401 · Course Notes<br>
+      Kashyap Sureshchandra Patel · Falak Naresh Parmar
+    </p>
+
+  </div>
+
+</div>
 
 ---
 
 ## Welcome
 
-These notes are meant to be read slowly.
-They focus on intuition first, then formalism.
-<div class="hero-content">
+These notes are meant to be read **slowly**.
 
-<h1>Quantum Machine Learning</h1>
+They focus on:
+- Intuition before formalism  
+- Structure over memorization  
+- Connections between quantum mechanics, linear algebra, and learning theory  
 
-<p class="hero-subtitle">
-A gentle, structured walk through quantum ideas,  
-machine learning models, and the mathematics beneath them.
-</p>
+Use the sections below to start reading.
 
-<p class="hero-meta">
-IT401 · Course Notes  
-<br>
-Kashyap Sureshchandra Patel · Falak Naresh Parmar
-</p>
+---
 
-</div>
+## Contents
 
-</div>
+### 📘 Course Material
+- **[Course Content](course_content.md)**  
+  Overview of quantum computing concepts, algorithms, and QML models covered in IT401.
+
+### 📐 Mathematical Foundations
+- **[Math Prerequisites](math_prerequisites.md)**  
+  Probability theory and linear algebra essentials required for quantum machine learning.
+
+---
+
+> These notes are living documents.  
+> They are refined as understanding deepens.
