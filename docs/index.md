@@ -1,10 +1,34 @@
-# Quantum Machine Learning (IT401)
+---
+hide:
+  - navigation
+  - toc
+---
 
-Welcome to the **Quantum Machine Learning** course notes.
+<div class="hero">
 
-These notes cover:
-- Core quantum computing concepts
-- Quantum algorithms
-- Mathematical foundations required for QML
+<div style="height: 4rem"></div>
 
-Use the navigation bar to explore the material.
+---
+
+## Welcome
+
+These notes are meant to be read slowly.
+They focus on intuition first, then formalism.
+<div class="hero-content">
+
+<h1>Quantum Machine Learning</h1>
+
+<p class="hero-subtitle">
+A gentle, structured walk through quantum ideas,  
+machine learning models, and the mathematics beneath them.
+</p>
+
+<p class="hero-meta">
+IT401 · Course Notes  
+<br>
+Kashyap Sureshchandra Patel · Falak Naresh Parmar
+</p>
+
+</div>
+
+</div>

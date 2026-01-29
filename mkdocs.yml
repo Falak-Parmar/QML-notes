@@ -2,16 +2,17 @@ site_name: Quantum Machine Learning Notes
 site_url: https://falak-parmar.github.io/QML-notes/
 site_author: Kashyap Sureshchandra Patel, Falak Naresh Parmar
 site_description: IT401 – Quantum Machine Learning course notes
+repo_name: Falak-Parmar/QML-notes
+repo_url: https://github.com/Falak-Parmar/QML-notes
+edit_uri: ""
 
 theme:
   name: material
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - toc.integrate
-    - search.highlight
-    - content.code.copy
+    - content.tooltips
+    - content.tabs.link
+    - navigation.instant
+    - navigation.instant.progress  
   palette:
     - scheme: default
       toggle: 
@@ -37,6 +38,10 @@ nav:
 
 plugins:
   - search
+  - social:                 # NEW: Automatically generates social media preview cards
+      cards_layout: default/variant 
+  - optimize:               # NEW: Compresses and optimizes your images automatically
+  - privacy:                # NEW: Self-hosts fonts/assets for GDPR and speed
 
 markdown_extensions:
   - admonition
@@ -50,3 +55,6 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
