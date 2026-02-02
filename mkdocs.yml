@@ -35,7 +35,14 @@ theme:
 nav:
   - Home: index.md
   - Course Content: course_content.md
-  - Math Prerequisites: math_prerequisites.md
+  - Fundamentals:
+    - Math Prerequisites: math_prerequisites.md
+    - Quantum Basics: quantum_fundamentals.md
+    - Bloch Sphere: bloch_sphere.md
+  - Operations & Measurement:
+    - Projective Measurement: measurement_pauli.md
+    - Quantum Circuits: quantum_circuits.md
+    - Entanglement: entanglement.md
 
 plugins:
   - search
@@ -52,3 +59,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - javascripts/katex.js

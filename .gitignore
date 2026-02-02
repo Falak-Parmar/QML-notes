@@ -11,3 +11,7 @@ __pycache__/
 
 # Editor
 .vscode/
+
+# Files
+main.pdf
+main.txt
