@@ -1,0 +1,1438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IT401 – Quantum Machine Learning course notes">
+      
+      
+        <meta name="author" content="Kashyap Sureshchandra Patel, Falak Naresh Parmar">
+      
+      
+        <link rel="canonical" href="https://falak-parmar.github.io/QML-notes/math_prerequisites/">
+      
+      
+        <link rel="prev" href="../course_content/">
+      
+      
+        <link rel="next" href="../quantum_fundamentals/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Math Prerequisites - Quantum Machine Learning Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#it401-quantum-machine-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Quantum Machine Learning Notes" class="md-header__button md-logo" aria-label="Quantum Machine Learning Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Machine Learning Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Math Prerequisites
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="light-blue"  aria-label="Early Bird"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Early Bird" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Night Owl"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Night Owl" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Falak-Parmar/QML-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Falak-Parmar/QML-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../course_content/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Content
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../measurement_pauli/" class="md-tabs__link">
+          
+  
+  
+  Operations & Measurement
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Quantum Machine Learning Notes" class="md-nav__button md-logo" aria-label="Quantum Machine Learning Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Machine Learning Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Falak-Parmar/QML-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Falak-Parmar/QML-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course_content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Content
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#math-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-probability-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Probability Theory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Probability Theory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-relative-frequency-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Relative Frequency Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-classical-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Classical Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-random-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Random Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-expectation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Expectation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Linear Algebra
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Linear Algebra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-symmetric-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Symmetric Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Eigenvalues and Eigenvectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Eigenvalues and Eigenvectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-eigenvalues-and-eigenvectors-of-a-hermitian-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Eigenvalues and Eigenvectors of a Hermitian Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-covariance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Covariance Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Covariance Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-calculating-covariance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Calculating Covariance Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-matrix-diagonalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Matrix Diagonalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-types-of-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Types of Matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Types of Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-eigenvalues-of-a-unitary-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Eigenvalues of a Unitary Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-example-hadamard-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Example: Hadamard Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bloch_sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations & Measurement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations & Measurement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measurement_pauli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projective Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entanglement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#math-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-probability-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Probability Theory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Probability Theory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-relative-frequency-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Relative Frequency Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-classical-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Classical Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-random-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Random Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-expectation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Expectation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Linear Algebra
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Linear Algebra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-symmetric-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Symmetric Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Eigenvalues and Eigenvectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Eigenvalues and Eigenvectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-eigenvalues-and-eigenvectors-of-a-hermitian-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Eigenvalues and Eigenvectors of a Hermitian Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-covariance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Covariance Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Covariance Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-calculating-covariance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Calculating Covariance Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-matrix-diagonalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Matrix Diagonalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-types-of-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Types of Matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Types of Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-eigenvalues-of-a-unitary-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Eigenvalues of a Unitary Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-example-hadamard-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Example: Hadamard Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="it401-quantum-machine-learning">IT401 – Quantum Machine Learning<a class="headerlink" href="#it401-quantum-machine-learning" title="Permanent link">&para;</a></h1>
+<h2 id="math-prerequisites">Math Prerequisites<a class="headerlink" href="#math-prerequisites" title="Permanent link">&para;</a></h2>
+<p>This document summarizes the mathematical background required for Quantum Machine Learning.</p>
+<hr />
+<h2 id="1-probability-theory">1. Probability Theory<a class="headerlink" href="#1-probability-theory" title="Permanent link">&para;</a></h2>
+<h3 id="11-relative-frequency-definition">1.1 Relative Frequency Definition<a class="headerlink" href="#11-relative-frequency-definition" title="Permanent link">&para;</a></h3>
+<p>The probability of an event is defined as the limit of its relative frequency over repeated trials:</p>
+<div class="arithmatex">\[
+P(A) = \lim_{n \to \infty} \frac{n_A}{n}
+\]</div>
+<p>where:
+- <span class="arithmatex">\(n_A\)</span> is the number of times event <span class="arithmatex">\(A\)</span> occurs
+- <span class="arithmatex">\(n\)</span> is the total number of trials</p>
+<hr />
+<h3 id="12-classical-definition">1.2 Classical Definition<a class="headerlink" href="#12-classical-definition" title="Permanent link">&para;</a></h3>
+<p>For a finite sample space with equally likely outcomes:</p>
+<div class="arithmatex">\[
+P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
+\]</div>
+<hr />
+<h3 id="13-random-variable">1.3 Random Variable<a class="headerlink" href="#13-random-variable" title="Permanent link">&para;</a></h3>
+<p>A random variable is a function:</p>
+<div class="arithmatex">\[
+X : \Omega \rightarrow \mathbb{R}
+\]</div>
+<p>It can be:
+- Discrete
+- Continuous</p>
+<hr />
+<h3 id="14-expectation">1.4 Expectation<a class="headerlink" href="#14-expectation" title="Permanent link">&para;</a></h3>
+<p>The expectation (mean) of a random variable represents its average value.</p>
+<p><strong>Discrete case:</strong>
+[
+E[X] = \sum_x x \, P(X = x)
+]</p>
+<p><strong>Continuous case:</strong>
+[
+E[X] = \int_{-\infty}^{\infty} x f_X(x)\, dx
+]</p>
+<p><strong>Interpretation:</strong>
+Expectation is a probability-weighted average and represents:
+- Long-run average outcome
+- Average loss or reward in machine learning
+- Expected observable in quantum systems</p>
+<hr />
+<h2 id="2-linear-algebra">2. Linear Algebra<a class="headerlink" href="#2-linear-algebra" title="Permanent link">&para;</a></h2>
+<h3 id="21-symmetric-matrix">2.1 Symmetric Matrix<a class="headerlink" href="#21-symmetric-matrix" title="Permanent link">&para;</a></h3>
+<p>A matrix <span class="arithmatex">\(A\)</span> is symmetric if:</p>
+<div class="arithmatex">\[
+A = A^\top
+\]</div>
+<p><strong>Properties:</strong>
+- All eigenvalues are real
+- Eigenvectors corresponding to distinct eigenvalues are orthogonal
+- Always diagonalizable using an orthogonal matrix</p>
+<hr />
+<h3 id="22-eigenvalues-and-eigenvectors">2.2 Eigenvalues and Eigenvectors<a class="headerlink" href="#22-eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h3>
+<p><strong>Procedure:</strong>
+1. Compute the characteristic equation:
+   $$
+   \det(A - \lambda I) = 0
+   $$
+2. Solve for eigenvalues <span class="arithmatex">\( \lambda \)</span>
+3. Solve:
+   $$
+   (A - \lambda I)v = 0
+   $$
+4. Normalize eigenvectors if required</p>
+<p><strong>Important Properties:</strong>
+- Sum of eigenvalues:
+  $$
+  \sum_i \lambda_i = \text{tr}(A)
+  $$
+- Product of eigenvalues:
+  $$
+  \prod_i \lambda_i = \det(A)
+  $$</p>
+<h4 id="example-eigenvalues-and-eigenvectors-of-a-hermitian-matrix">Example: Eigenvalues and Eigenvectors of a Hermitian Matrix<a class="headerlink" href="#example-eigenvalues-and-eigenvectors-of-a-hermitian-matrix" title="Permanent link">&para;</a></h4>
+<p>Given the Hermitian matrix <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[
+A = \begin{bmatrix} 2 &amp; 1-i \\ 1+i &amp; 3 \end{bmatrix}
+\]</div>
+<ol>
+<li><strong>Characteristic Equation</strong>:
+   $$
+   \det(A - \lambda I) = (2-\lambda)(3-\lambda) - (1-i)(1+i) = \lambda^2 - 5\lambda + 4 = 0
+   $$</li>
+<li><strong>Eigenvalues</strong>: <span class="arithmatex">\((\lambda-4)(\lambda-1) = 0 \implies \lambda_1 = 4, \lambda_2 = 1\)</span>.</li>
+<li><strong>Eigenvectors</strong>:</li>
+<li>For <span class="arithmatex">\(\lambda_1 = 4\)</span>: <span class="arithmatex">\(v_1 = \begin{bmatrix} 1-i \\ 2 \end{bmatrix}\)</span>, Normalized: <span class="arithmatex">\(\hat{v}_1 = \frac{1}{\sqrt{6}} \begin{bmatrix} 1-i \\ 2 \end{bmatrix}\)</span></li>
+<li>For <span class="arithmatex">\(\lambda_2 = 1\)</span>: <span class="arithmatex">\(v_2 = \begin{bmatrix} -(1-i) \\ 1 \end{bmatrix}\)</span>, Normalized: <span class="arithmatex">\(\hat{v}_2 = \frac{1}{\sqrt{3}} \begin{bmatrix} i-1 \\ 1 \end{bmatrix}\)</span></li>
+</ol>
+<hr />
+<h3 id="23-covariance-matrix">2.3 Covariance Matrix<a class="headerlink" href="#23-covariance-matrix" title="Permanent link">&para;</a></h3>
+<p>For a random vector <span class="arithmatex">\(X \in \mathbb{R}^d\)</span>:</p>
+<div class="arithmatex">\[
+\Sigma = \text{Cov}(X) = E[(X - E[X])(X - E[X])^\top]
+\]</div>
+<p><strong>Properties:</strong>
+- Symmetric
+- Positive semi-definite
+- Diagonal entries → variances
+- Off-diagonal entries → covariances</p>
+<h4 id="example-calculating-covariance-matrix">Example: Calculating Covariance Matrix<a class="headerlink" href="#example-calculating-covariance-matrix" title="Permanent link">&para;</a></h4>
+<p>Consider a dataset with observations: <span class="arithmatex">\((1, 2, 1), (2, 3, 2), (3, 5, 4)\)</span>.
+- <strong>Means</strong>: <span class="arithmatex">\(\mu_X = 2, \mu_Y = 10/3, \mu_Z = 7/3\)</span>.
+- <strong>Covariance Matrix</strong>:
+  $$
+  \Sigma = \begin{bmatrix} 2/3 &amp; 1 &amp; 1 \ 1 &amp; 14/9 &amp; 14/9 \ 1 &amp; 14/9 &amp; 14/9 \end{bmatrix}
+  $$
+  <em>(Calculated using <span class="arithmatex">\(\Sigma = \frac{1}{n} X_c^\top X_c\)</span> where <span class="arithmatex">\(X_c\)</span> is the centered data matrix)</em>.</p>
+<hr />
+<h3 id="24-matrix-diagonalization">2.4 Matrix Diagonalization<a class="headerlink" href="#24-matrix-diagonalization" title="Permanent link">&para;</a></h3>
+<p><strong>Eigendecomposition:</strong>
+$$
+A = Q \Lambda Q^{-1}
+$$</p>
+<p><strong>Singular Value Decomposition (SVD):</strong>
+$$
+A = U \Sigma V^\top
+$$</p>
+<hr />
+<h3 id="25-types-of-matrices">2.5 Types of Matrices<a class="headerlink" href="#25-types-of-matrices" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Hermitian Matrix</strong></li>
+<li><span class="arithmatex">\(A = A^\dagger\)</span></li>
+<li>Real eigenvalues</li>
+<li>
+<p>Orthogonal eigenvectors</p>
+</li>
+<li>
+<p><strong>Unitary Matrix</strong></p>
+</li>
+<li><span class="arithmatex">\(U^\dagger U = I\)</span></li>
+<li>
+<p>Eigenvalues lie on the unit circle</p>
+</li>
+<li>
+<p><strong>Orthogonal Matrix</strong></p>
+</li>
+<li><span class="arithmatex">\(Q^\top Q = I\)</span></li>
+<li>
+<p>Preserves lengths and angles</p>
+</li>
+<li>
+<p><strong>Orthonormal Matrix</strong></p>
+</li>
+<li>
+<p>Columns are unit vectors and mutually perpendicular</p>
+</li>
+<li>
+<p><strong>Rotation Matrix</strong>
+  $$
+  R(\theta) =
+  \begin{bmatrix}
+  \cos \theta &amp; -\sin \theta \
+  \sin \theta &amp; \cos \theta
+  \end{bmatrix}
+  $$</p>
+</li>
+</ul>
+<h4 id="example-eigenvalues-of-a-unitary-matrix">Example: Eigenvalues of a Unitary Matrix<a class="headerlink" href="#example-eigenvalues-of-a-unitary-matrix" title="Permanent link">&para;</a></h4>
+<p>Given the Unitary matrix <span class="arithmatex">\(A\)</span>:
+$$
+A = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 &amp; i \ i &amp; 1 \end{bmatrix}
+$$
+The eigenvalues are <span class="arithmatex">\(\lambda_{1,2} = \frac{1 \mp i}{\sqrt{2}} = e^{\mp i\pi/4}\)</span>, which lie on the unit circle (<span class="arithmatex">\(|\lambda| = 1\)</span>).</p>
+<hr />
+<h3 id="26-example-hadamard-matrix">2.6 Example: Hadamard Matrix<a class="headerlink" href="#26-example-hadamard-matrix" title="Permanent link">&para;</a></h3>
+<p>The Hadamard matrix is a real, orthogonal, and unitary matrix commonly used in quantum computing.
+$$
+H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 &amp; 1 \ 1 &amp; -1 \end{bmatrix}
+$$
+It maps the computational basis states to superposition states:
+- <span class="arithmatex">\(H|0\rangle = |+\rangle\)</span>
+- <span class="arithmatex">\(H|1\rangle = |-\rangle\)</span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.sections", "content.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
