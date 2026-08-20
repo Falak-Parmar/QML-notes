@@ -1,0 +1,149 @@
+/* ===================================== */
+/* FULL HERO BACKGROUND (HOME ONLY) */
+/* ===================================== */
+
+/* Target the container when it contains hero-content */
+.md-container:has(.hero-content) {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background layer */
+.md-container:has(.hero-content)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    /* Original height */
+    background:
+        linear-gradient(180deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.8)),
+        url("../assets/images/state_space_garden_hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Restore header and sidebar defaults */
+.md-container:has(.hero-content) .md-header {
+    background: var(--md-primary-fg-color);
+}
+
+/* Body defaults */
+body:has(.hero-content) {
+    overflow-x: hidden;
+}
+
+body:has(.hero-content),
+.md-container:has(.hero-content),
+.md-container:has(.hero-content) .md-main,
+.md-container:has(.hero-content) .md-content,
+.md-container:has(.hero-content) .md-content__inner {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/* New Credit Style - Simple Text */
+.credit-callout {
+    margin: 4rem auto;
+    max-width: 800px;
+    padding-left: 1rem;
+    border-left: 4px solid var(--md-default-fg-color--lightest);
+    color: var(--md-default-fg-color--light);
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* ===================================== */
+/* HERO TEXT */
+/* ===================================== */
+
+.hero-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: calc(var(--md-header-height) + 2rem) 2rem 2rem;
+    color: #ffffff;
+    /* Explicitly white for contrast against dark background */
+}
+
+/* Ensure headings in hero are also white */
+.hero-content h1,
+.hero-content h2,
+.hero-content h3 {
+    color: #ffffff !important;
+}
+
+.hero-subtitle,
+.hero-meta {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.hero-cta {
+    margin-top: 1rem;
+}
+
+.hero-button {
+    padding: 0.8rem 2rem;
+    background: #60a5fa;
+    color: #ffffff !important;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+.hero-button:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.hero-credit {
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
+    opacity: 0.75;
+    font-style: italic;
+}
+
+/* ===================================== */
+/* TEXT READABILITY */
+/* ===================================== */
+
+.hero-content h1 {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.hero-subtitle,
+.hero-meta {
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================================== */
+/* CONTENT TRANSITION */
+/* ===================================== */
+
+.md-container:has(.hero-content) .md-content {
+    background: transparent;
+}
+
+.md-container:has(.hero-content) .md-content__inner {
+    padding-top: 0;
+}
+
+.md-container:has(.hero-content) .md-content> :first-child {
+    margin-top: 0;
+}
